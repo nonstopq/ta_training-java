@@ -27,18 +27,15 @@ public class PastebinPage {
         WebElement codeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(codeInput));
         codeElement.sendKeys(code);
     }
-
     public void selectExpiration(String expiration) {
         WebElement expirationElement = wait.until(ExpectedConditions.elementToBeClickable(expirationDropdown));
         Select expirationSelect = new Select(expirationElement);
         expirationSelect.selectByVisibleText(expiration);
     }
-
     public void enterTitle(String title) {
         WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(titleInput));
         titleElement.sendKeys(title);
     }
-
     public void createNewPaste() {
         WebElement createButton = wait.until(ExpectedConditions.elementToBeClickable(createNewPasteButton));
         createButton.click();
