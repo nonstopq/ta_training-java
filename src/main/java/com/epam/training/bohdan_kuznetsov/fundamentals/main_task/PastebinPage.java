@@ -13,19 +13,16 @@ public class PastebinPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    // Locators for Pastebin elements
     private By codeInput = By.id("postform-text");
     private By expirationDropdown = By.id("postform-expiration");
     private By titleInput = By.id("postform-name");
     private By createNewPasteButton = By.xpath("//button[text()='Create New Paste']");
 
-    // Constructor
     public PastebinPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    // Methods for interacting with page elements
     public void enterCode(String code) {
         WebElement codeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(codeInput));
         codeElement.sendKeys(code);

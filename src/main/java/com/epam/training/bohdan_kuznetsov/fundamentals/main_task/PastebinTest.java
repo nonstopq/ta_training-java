@@ -24,18 +24,15 @@ public class PastebinTest {
 
     @Test
     public void testCreateNewPaste() {
-        // Define the paste content, expiration, and title
         String code = "Hello from WebDriver";
         String expiration = "10 Minutes";
         String title = "helloweb";
 
-        // Use the Page Object to perform actions
         pastebinPage.enterCode(code);
         pastebinPage.selectExpiration(expiration);
         pastebinPage.enterTitle(title);
         pastebinPage.createNewPaste();
 
-        // Verify the title to ensure the paste was created with the correct title
         assertTrue(driver.getTitle().contains(title), "The paste title does not contain the expected text.");
     }
 
